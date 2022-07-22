@@ -10,7 +10,7 @@
     "start": "node ."
   },
   "keywords": [],
-  "author": "",
+  "author": "himanshu",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
