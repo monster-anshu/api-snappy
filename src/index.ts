@@ -16,6 +16,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: '*',
+    allowedHeaders: '*',
   }),
 );
 app.use('/api', api);
