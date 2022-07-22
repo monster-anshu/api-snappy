@@ -1,6 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
-import cors from 'cors';
+import cors, { CorsOptions } from 'cors';
 import dotenv from 'dotenv';
 import { Server } from 'socket.io';
 import { connect } from './Database/mongo';
@@ -11,12 +11,20 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // * Middleware
-app.use(
-  cors({
-    origin: '*',
-    allowedHeaders: '*',
-  }),
-);
+const corsOption: CorsOptions = {
+  allowedHeaders: [
+    'Origin',
+    'X-Requested-With',
+    'Content-Type',
+    'Accept',
+    'X-Access-Token',
+  ],
+  credentials: true,
+  methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+  origin: '*',
+  preflightContinue: false,
+};
+app.use(cors(corsOption));
 
 app.use(morgan('common'));
 app.use(express.json());
