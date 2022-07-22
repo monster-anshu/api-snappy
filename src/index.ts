@@ -15,7 +15,7 @@ app.use(morgan('common'));
 app.use(express.json());
 app.use(
   cors({
-    origin: '*',
+    origin: 'https://app-snappy.vercel.app',
   }),
 );
 app.use('/api', api);
@@ -31,7 +31,7 @@ const server = app.listen(PORT, () => {
 
 const io = new Server(server, {
   cors: {
-    origin: '*',
+    origin: 'https://app-snappy.vercel.app',
   },
 });
 
