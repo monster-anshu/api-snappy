@@ -9,6 +9,7 @@ export const api = Router();
 api.use(
   cors({
     origin: '*',
+    allowedHeaders: '*',
   }),
 );
 api.use('/auth', auth_routes);
