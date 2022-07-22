@@ -16,9 +16,16 @@ const PORT = process.env.PORT || 5000;
 
 // * Middleware
 const corsOption: CorsOptions = {
-  allowedHeaders: '*',
+  allowedHeaders: [
+    'Origin',
+    'X-Requested-With',
+    'Content-Type',
+    'Accept',
+    'X-Access-Token',
+    'authorization',
+  ],
   credentials: true,
-  methods: '*',
+  methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
   origin: '*',
   preflightContinue: false,
 };
