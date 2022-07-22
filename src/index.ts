@@ -23,6 +23,7 @@ const corsOption: CorsOptions = {
     'Accept',
     'X-Access-Token',
     'authorization',
+    'Access-Control-Allow-Origin',
   ],
   credentials: true,
   methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
