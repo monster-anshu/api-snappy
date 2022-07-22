@@ -7,7 +7,7 @@
     "build": "tsc",
     "dev": "nodemon .",
     "watch": "tsc --watch",
-    "start": "node ."
+    "start": "tsc && node ."
   },
   "keywords": [],
   "author": "himanshu",
