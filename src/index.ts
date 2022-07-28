@@ -14,31 +14,12 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// * Middleware
-const corsOption: CorsOptions = {
-  allowedHeaders: [
-    'Origin',
-    'X-Requested-With',
-    'Content-Type',
-    'Accept',
-    'X-Access-Token',
-    'authorization',
-    'Access-Control-Allow-Origin',
-  ],
-  credentials: true,
-  methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-  origin: '*',
-  preflightContinue: false,
-};
-app.use(cors(corsOption));
-
 app.use(morgan('common'));
 app.use(express.json());
 app.get('/', (req, res) => {
   res.send('ok');
 });
 
-app.use(cors(corsOption));
 app.use('/api/auth', auth_routes);
 app.use('/api/user', user_routes);
 app.use('/api/chat', messages_routes);
