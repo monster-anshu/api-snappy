@@ -14,6 +14,13 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.use(
+  cors({
+    origin: 'https://app-snappy.vercel.app',
+    credentials: true,
+  }),
+);
+
 app.use(morgan('common'));
 app.use(express.json());
 app.get('/', (req, res) => {
