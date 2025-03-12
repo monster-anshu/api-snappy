@@ -4,7 +4,7 @@
     "allowJs": false,
     "target": "ES6",
     "module": "commonjs",
-    "sourceMap": true,
+    "sourceMap": false,
     "removeComments": true,
     "esModuleInterop": true,
     "strict": true,
@@ -12,7 +12,7 @@
     "rootDir": "./src",
     "isolatedModules": true,
     "moduleResolution": "Node",
-    "importHelpers": true
+    "importHelpers": true,
   },
   "include": ["src", "custom.d.ts"],
   "exclude": ["node_modules"]
