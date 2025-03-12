@@ -12,7 +12,7 @@
     "rootDir": "./src",
     "isolatedModules": true,
     "moduleResolution": "Node",
-    "importHelpers": true,
+    "importHelpers": false,
   },
   "include": ["src", "custom.d.ts"],
   "exclude": ["node_modules"]

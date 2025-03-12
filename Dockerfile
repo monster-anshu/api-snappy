@@ -19,7 +19,7 @@ WORKDIR /usr/src/app
 COPY --from=build /usr/src/app/node_modules ./node_modules
 COPY --from=build /usr/src/app/dist ./dist
 
-EXPOSE 3000
+EXPOSE 5000
 ENV NODE_ENV=production
 
 CMD [ "dist/index.js" ]

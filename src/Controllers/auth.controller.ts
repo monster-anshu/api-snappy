@@ -1,6 +1,6 @@
 import { RequestHandler } from 'express';
 import { User } from '../Models';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 export const register: RequestHandler = async (req, res, next) => {
   try {
