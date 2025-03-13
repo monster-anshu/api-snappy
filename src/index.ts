@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: 'https://app-snappy.vercel.app',
+    origin: '*',
     credentials: true,
   }),
 );

@@ -1,6 +1,6 @@
 import { RequestHandler } from 'express';
 import { User } from '../Models';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 export const register: RequestHandler = async (req, res, next) => {
   try {
@@ -30,7 +30,7 @@ export const register: RequestHandler = async (req, res, next) => {
       password: hashedPassword,
     });
 
-    const token = sign({ user }, process.env.KEY || '');
+    const token = sign({ _id: user._id.toString() }, process.env.KEY || "");
 
     return res.json({ token, success: true });
   } catch (error) {
@@ -63,7 +63,7 @@ export const login: RequestHandler = async (req, res, next) => {
         .status(401)
         .json({ msg: 'Incorrect Password', success: false });
 
-    const token = sign({ user }, process.env.KEY || '');
+    const token = sign({ _id: user._id.toString() }, process.env.KEY || "");
     return res.json({ success: true, token });
   } catch (error) {
     next(error);
